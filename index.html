@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Códigos Java - Windows XP Vibes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Códigos Java Nostálgicos</h1>
+        <p>Uma coleção de programas Java com vibe Windows XP</p>
+    </header>
+
+    <div class="container">
+        <!-- Jogo de Adivinhação -->
+        <section class="code-section">
+            <h2>Jogo de Adivinhação</h2>
+            <pre><code>import java.util.Scanner;
+
+public class Joguinhoo {
+    public static void main(String[] args) {
+        int numeroAleatorio = (int) (Math.random() * 100 + 1);
+        int tentativas = 0;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("To pensando em um número entre 1 e 100, mas vc nunca vai saber:");
+        while (true) {
+            int chute = scanner.nextInt();
+            tentativas++;
+            if (chute == numeroAleatorio) {
+                System.out.println("desculpa ai akinator, msm vc acertando em " + tentativas + " tentativas, vc foi bem até vai");
+                break;
+            } else if (chute < numeroAleatorio) {
+                System.out.println("Ta longe em mano, número é bem maior " + chute + ".");
+            } else {
+                System.out.println("Meu pai amado, o número é menor cabeça " + chute + ".");
+            }
+        }
+    }
+}</code></pre>
+        </section>
+
+        <!-- Scanner (Customizado) -->
+        <section class="code-section">
+            <h2>Scanner Customizado</h2>
+            <pre><code>import java.io.InputStream;
+
+public class Scanner {
+    public Scanner(InputStream in) {
+        //TODO Auto-generated constructor stub
+    }
+
+    public int nextInt() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'nextInt'");
+    }
+}</code></pre>
+        </section>
+
+        <!-- Smart TV -->
+        <section class="code-section">
+            <h2>Smart TV</h2>
+            <pre><code>public class SmartTv {
+    boolean Ligada = true;
+    int canal = 1;
+    int volume = 25;
+
+    public class StringArrayExample {
+        public static void main(String[] args) {
+            String[] channelNames = {"TV Globo", "SBT", "Record", "Band", "RedeTV!"};
+    
+            int channelIndex = 0;
+            while (channelIndex < channelNames.length) {
+                switch (channelIndex) {
+                    case 0:
+                        System.out.println("Canal: TV Globo");
+                        break;
+                    case 1:
+                        System.out.println("Canal: SBT");
+                        break;
+                    case 2:
+                        System.out.println("Canal: Record");
+                        break;
+                    case 3:
+                        System.out.println("Canal: Band");
+                        break;
+                    case 4:
+                        System.out.println("Canal: RedeTV!");
+                        break;
+                    default:
+                        System.out.println("Canal não encontrado.");
+                }
+                channelIndex++;
+            }
+        }
+    }
+
+    public void aumentarVolume() {
+        volume++;
+    }
+
+    public void diminuirVolume() {
+        volume--;
+    }
+
+    public void aumentarCanal() {
+        canal++;
+    }
+
+    public void diminuirCanal() {
+        canal--;
+    }
+
+    public void mudarCanal(int novoCanal) {
+        canal = novoCanal;
+    }
+}</code></pre>
+        </section>
+
+        <!-- Usuário TV -->
+        <section class="code-section">
+            <h2>Usuário da Smart TV</h2>
+            <pre><code>public class UsuarioTv {
+    public static void main(String[] args) {
+        System.out.println("Olá usuário");
+
+        SmartTv appSmartTv = new SmartTv();
+
+        System.out.println("A tv está Ligada? " + appSmartTv.Ligada);
+        System.out.println("O canal da tv é: " + appSmartTv.canal);
+        System.out.println("O volume da tv é: " + appSmartTv.volume);
+
+        appSmartTv.aumentarVolume();
+
+        System.out.println("Volume atual: " + appSmartTv.volume);
+
+        appSmartTv.aumentarVolume();
+
+        appSmartTv.aumentarCanal();
+
+        System.out.println("Canal atual: " + appSmartTv.canal);
+
+        appSmartTv.mudarCanal(15); // Corrigido "mudarCnal" e "novoCanal:15"
+
+        System.out.println("canal atual: " + appSmartTv.canal);
+    }
+}</code></pre>
+        </section>
+
+        <!-- Calculadora -->
+        <section class="code-section">
+            <h2>Calculadora</h2>
+            <pre><code>import java.util.Scanner;
+
+public class Calculadora {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Escolha a operação:");
+        System.out.println("1. Adição");
+        System.out.println("2. Subtração");
+        System.out.println("3. Multiplicação");
+        System.out.println("4. Divisão");
+        int escolha = scanner.nextInt();
+        System.out.println("Digite o primeiro número:");
+        double num1 = scanner.nextDouble();
+        System.out.println("Digite o segundo número:");
+        double num2 = scanner.nextDouble();
+        double resultado = calcular(escolha, num1, num2);
+        System.out.println("O resultado é: " + resultado);
+    }
+
+    public static double calcular(int escolha, double num1, double num2) {
+        switch (escolha) {
+            case 1:
+                return num1 + num2;
+            case 2:
+                return num1 - num2;
+            case 3:
+                return num1 * num2;
+            case 4:
+                if (num2 != 0) {
+                    return num1 / num2;
+                } else {
+                    System.out.println("Erro: divisão por zero carakk");
+                    return 0;
+                }
+            default:
+                System.out.println("Erro: operação inválida!");
+                return 0;
+        }
+    }
+}</code></pre>
+        </section>
+
+        <!-- Calculadora Dois -->
+        <section class="code-section">
+            <h2>Calculadora Dois</h2>
+            <pre><code>public class CalculadoraDois {
+    public static void main(String[] args) {
+        Calculadora calculadora = new Calculadora();
+        double resultado = calculadora.calcular(1, 10, 5);
+        System.out.println("Resultado do teste: " + resultado);
+    }
+}</code></pre>
+        </section>
+
+        <!-- Controle da Smart TV -->
+        <section class="code-section">
+            <h2>Controle da Smart TV</h2>
+            <pre><code>import java.util.Scanner;
+
+public class ControleDaSmartTv {
+    public static void main(String[] args) {
+        SmartTv tv = new SmartTv();
+
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Olá! O que deseja para agora");
+            System.out.println("1. Verificar estado da TV");
+            System.out.println("2. Aumentar volume");
+            System.out.println("3. Diminuir volume");
+            System.out.println("4. Aumentar canal");
+            System.out.println("5. Diminuir canal");
+            System.out.println("6. Mudar canal");
+            System.out.println("7. Sair");
+
+            int option = scanner.nextInt();
+
+            switch (option) {
+                case 1:
+                    System.out.println("A TV está Ligada? " + tv.Ligada);
+                    System.out.println("O canal da TV é: " + tv.canal);
+                    System.out.println("O volume da TV é: " + tv.volume);
+                    break;
+                case 2:
+                    tv.aumentarVolume();
+                    System.out.println("Volume atual: " + tv.volume);
+                    break;
+                case 3:
+                    tv.diminuirVolume();
+                    System.out.println("Volume atual: " + tv.volume);
+                    break;
+                case 4:
+                    tv.aumentarCanal();
+                    System.out.println("Canal atual: " + tv.canal);
+                    break;
+                case 5:
+                    tv.diminuirCanal();
+                    System.out.println("Canal atual: " + tv.canal);
+                    break;
+                case 6:
+                    System.out.println("Digite o novo canal:");
+                    int newChannel = scanner.nextInt();
+                    tv.mudarCanal(newChannel);
+                    System.out.println("Canal atual: " + tv.canal);
+                    break;
+                case 7:
+                    System.out.println("Tchau");
+                    return;
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+            }
+        }
+    }
+}</code></pre>
+        </section>
+
+        <!-- Conversor -->
+        <section class="code-section">
+            <h2>Conversor</h2>
+            <pre><code>import java.util.Scanner;
+
+public class Conversor {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Escolha a unidade de medida:");
+        System.out.println("1. Temperatura");
+        System.out.println("2. Distância");
+        int escolha = scanner.nextInt();
+        switch (escolha) {
+            case 1:
+                System.out.println("Escolha a conversão:");
+                System.out.println("1. Celsius para Fahrenheit");
+                System.out.println("2. Fahrenheit para Celsius");
+                int conversao = scanner.nextInt();
+                System.out.println("Digite o valor:");
+                double valor = scanner.nextDouble();
+                double resultado = converterTemperatura(conversao, valor);
+                System.out.println("Resultado: " + resultado);
+                break;
+            case 2:
+                System.out.println("Escolha a conversão:");
+                System.out.println("1. Metros para quilômetros");
+                System.out.println("2. Quilômetros para metros");
+                conversao = scanner.nextInt();
+                System.out.println("Digite o valor:");
+                valor = scanner.nextDouble();
+                resultado = converterDistancia(conversao, valor);
+                System.out.println("Ta ai o resultado pra vc doido: " + resultado);
+                break;
+            default:
+                System.out.println("Erro: unidade de medida inválida!");
+        }
+    }
+
+    public static double converterTemperatura(int conversao, double valor) {
+        switch (conversao) {
+            case 1:
+                return valor * 9 / 5 + 32;
+            case 2:
+                return (valor - 32) * 5 / 9;
+            default:
+                System.out.println("Erro: conversão inválida!");
+                return 0;
+        }
+    }
+
+    public static double converterDistancia(int conversao, double valor) {
+        switch (conversao) {
+            case 1:
+                return valor / 1000;
+            case 2:
+                return valor * 1000;
+            default:
+                System.out.println("Erro: conversão inválida!");
+                return 0;
+        }
+    }
+}</code></pre>
+        </section>
+
+        <!-- Conversor Dois -->
+        <section class="code-section">
+            <h2>Conversor Dois</h2>
+            <pre><code>public class ConversorDois {
+    public static void main(String[] args) {
+        Conversor conversor = new Conversor();
+        double resultado = conversor.converterTemperatura(1, 30);
+        System.out.println("Resultado do teste: " + resultado);
+    }
+}</code></pre>
+        </section>
+
+        <!-- Gerador de Senha -->
+        <section class="code-section">
+            <h2>Gerador de Senha</h2>
+            <pre><code>import java.util.Random;
+import java.util.Scanner;
+
+public class GeradorSenha {
+    public static final String CARACTERES = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*()_+-={}|[]:;<>?,./";
+
+    public static void main(String[] args) {
+        System.out.println("Boa tarde, aqui vc escolhera quantos caracteres gostaria em sua senha randomizada que o banco te oferece:");
+        Scanner scanner = new Scanner(System.in);
+        int quantidade = scanner.nextInt();
+        String senha = gerarSenha(quantidade);
+        System.out.println("Senha gerada: " + senha);
+        scanner.close();
+    }
+
+    public static String gerarSenha(int quantidade) {
+        Random random = new Random();
+        StringBuilder senha = new StringBuilder();
+
+        for (int i = 0; i < quantidade; i++) {
+            char caractere = CARACTERES.charAt(random.nextInt(CARACTERES.length()));
+            senha.append(caractere);
+        }
+
+        return senha.toString();
+    }
+}</code></pre>
+        </section>
+
+        <!-- Gerador de Senha Teste -->
+        <section class="code-section">
+            <h2>Gerador de Senha Teste</h2>
+            <pre><code>public class GeradorSenhaTeste {
+    public static void main(String[] args) {
+        GeradorSenha gerador = new GeradorSenha();
+        String senha = gerador.gerarSenha(12);
+        System.out.println("Senha gerada: " + senha);
+    }
+}</code></pre>
+        </section>
+
+        <!-- Jogo Continuação -->
+        <section class="code-section">
+            <h2>Jogo Continuação</h2>
+            <pre><code>public class JoguinhoContinuacao {
+    public static void main(String[] args) {
+        Joguinhoo jogo = new Joguinhoo();
+        jogo.main(new String[] {});
+    }
+}</code></pre>
+        </section>
+    </div>
+
+    <footer>
+        <p>Feito com 💾 por PedroHe13 - 2025</p>
+    </footer>
+</body>
+</html>
